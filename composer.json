@@ -1,0 +1,14 @@
+{
+  "name": "drps/fw-sample",
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+
+  },
+  "require": {
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  }
+}
