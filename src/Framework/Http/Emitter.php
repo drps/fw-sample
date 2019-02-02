@@ -2,12 +2,14 @@
 
 namespace Framework\Http;
 
-use Framework\Http\Response;
-
 class Emitter
 {
     public function emit(Response $response)
     {
+        if (headers_sent()) {
+            throw new \RuntimeException('Headers already sent');
+        }
+
         $this->emitHeaders($response);
         $this->emitStatusLine($response);
         echo $response->getBody();
