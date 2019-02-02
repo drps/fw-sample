@@ -55,6 +55,10 @@ class Route
 
     public function match(Request $request): ?Result
     {
+        if ($this->method && $this->method !== $request->getMethod()) {
+            return null;
+        }
+
         $path = $request->getPath();
         $pattern = $this->pattern ?: $this->path;
 

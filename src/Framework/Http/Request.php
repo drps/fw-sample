@@ -44,4 +44,10 @@ class Request
     {
         return $this->attributes[$name] ?? null;
     }
+
+    public function getMethod()
+    {
+        $method = $this->server['REQUEST_METHOD'] ?? 'get';
+        return \strtolower($method);
+    }
 }
