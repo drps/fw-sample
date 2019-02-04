@@ -36,7 +36,7 @@ class RouteCollection
         throw new RouteNotFoundException('Route not found');
     }
 
-    private function addRoute(Route $route)
+    public function addRoute(Route $route)
     {
         $this->routes[] = $route;
     }

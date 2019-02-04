@@ -12,7 +12,7 @@ class Route
     private $name;
     private $pattern;
 
-    public function __construct(string $path, string $method, callable $handler, string $name)
+    public function __construct(string $path, string $method, $handler, string $name)
     {
         if (preg_match_all('#{(.*?)}#', $path, $matches)) {
             $replaces = array_combine(
@@ -43,7 +43,7 @@ class Route
         return $this->name;
     }
 
-    public function getHandler(): callable
+    public function getHandler()
     {
         return $this->handler;
     }

@@ -22,4 +22,9 @@ class Router
     {
         
     }
+
+    public function addRoute(Route $route)
+    {
+        $this->collection->addRoute($route);
+    }
 }
